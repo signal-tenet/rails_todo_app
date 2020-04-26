@@ -1,0 +1,19 @@
+<% @todo_lists.each do |todo_list| %>
+<% if todo_list.user == current_user %>
+<div class="index_row clearfix">
+    <h2 class="todo_list_title">
+		<i class="far fa-clipboard"> </i>
+		<%= link_to todo_list.title, todo_list%>
+	  </h2>
+  </div>
+<% end %>
+<% end %>
+
+<% if user_signed_in? %>
+<div class="links">
+  <button class="btn btn-lg">
+  <i class="fas fa-plus"></i>
+  <%= link_to "Add TODO List", new_todo_list_path %>
+  </button>
+</div>
+<% end %>

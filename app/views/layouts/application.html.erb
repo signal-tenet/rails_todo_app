@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaskScheduler</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+          <header class="header">
+          <h1>SIMPLE TODO LISTS</h1>
+          <h3>From Ruby Garage</h3>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          </header>
+	    <div class="container">
+		      <%= yield %>
+	    </div>
+
+      <footer class="footer">
+      <p><i class="far fa-copyright"></i> Ruby Garage 
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <%= link_to destroy_user_session_path, method: :delete, title: 'Sign out', class: 'btn btn-lg' do %>
+           <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+      <% else %>
+        <a title="Sign in" href="<%= new_user_session_path %>" class="btn btn-md"><i class="fas fa-sign-in-alt"></i></a> | <a title="Sign up" href="<%= new_user_registration_path %>" class="btn btn-md"><i class="fas fa-user-plus"></i></a>
+      <% end %>
+      </p>
+    </footer>
+  </body>
+</html>

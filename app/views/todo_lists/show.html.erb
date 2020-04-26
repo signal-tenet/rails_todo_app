@@ -1,0 +1,23 @@
+<h2 class="todo_list_title">
+	<i class="far fa-clipboard"> </i>
+	<%= @todo_list.title %>
+			<%= link_to edit_todo_list_path(@todo_list) do 
+			%>
+			<i class="fas fa-pencil-alt"></i> |
+			<% end %>
+			<%= link_to todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" } do 
+			%>
+			<i class="fa fa-trash"></i> |
+			<% end %>
+			<%= link_to todo_lists_path do %>
+			<i class="fas fa-reply-all"></i>
+			<% end %>
+			
+</h2>
+
+<div id="todo_items_wrapper">
+	<%= render @todo_list.todo_items %>
+	<div id="form">
+		<%= render "todo_items/form" %>
+	</div>
+</div>
