@@ -19,7 +19,7 @@ class TodoItemsController < ApplicationController
 	
 	
 	def complete
-		@todo_item.update_attribute(:completed_at, Time.now)
+		@todo_item.toggle_completion
 		redirect_to @todo_list, notice: "Todo item completed"
 	end
 	
