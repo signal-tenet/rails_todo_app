@@ -1,0 +1,16 @@
+<h1 class="todo_list_title">Editing Task</h1>
+<div class="forms">
+    <%= form_for(@todo_item, url: todo_list_todo_item_path) do |f| %>
+    <div class="field">
+        <%= f.text_field :content, placeholder: "New task...", :required => 'required' %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+    <% end %>
+</div>
+<div class="links">
+    <%= link_to @todo_list do%>
+    <i class="fas fa-reply-all">Cancel and return</i>
+    <% end %>
+</div>
