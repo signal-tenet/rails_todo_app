@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_094705) do
+ActiveRecord::Schema.define(version: 2020_04_30_150923) do
 
   create_table "todo_items", force: :cascade do |t|
     t.string "content"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_094705) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "completed_at"
+    t.string "priority"
+    t.date "deadline"
     t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
   end
 

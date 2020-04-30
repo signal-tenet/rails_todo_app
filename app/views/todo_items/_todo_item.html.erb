@@ -7,6 +7,10 @@
 		<div class="todo_item">
 			<p <%= todo_item.completed? ? 'class=todo_completed' : '' %>>
 			<%= todo_item.content %>
+			<span class="todo_item_date">
+			Priority: <%= todo_item.priority %>;
+        	Deadline date: <%= todo_item.deadline.strftime("%d-%m-%Y") %>
+			</span>
 			</p>
 		</div>
 		<div class="trash">
