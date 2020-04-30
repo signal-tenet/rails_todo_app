@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ $white_opaque: rgba(250, 250, 250, .3);
+ //$dark: #1F7972;
  $dark: #010107;
  $gray: #454752;
 
@@ -140,8 +142,6 @@ body {
 			}
 		}
 	}
-
-
 	#form {
 		margin-top: 2em;
 		padding: 0 5%;
@@ -239,10 +239,4 @@ textarea {
 .todo_completed {
 	text-decoration: line-through;
 	opacity: 0.4;
-}
-
-
-.todo_item_date{
-	margin-left: 2em;
-	color: #024200;
 }
